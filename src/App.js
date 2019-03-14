@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Container, Col } from "reactstrap";
 import CategoryGalery from "./components/categoryGalery";
 import DetailGalery from "./components/detailGalery";
 
@@ -11,16 +12,20 @@ class App extends Component {
       <div className="App">
         <header className="Background-image" />
         <div className="Background-box" />
-        <div className="Content">
-          <h2>Fotogaléria</h2>
-          <h3>Kategórie</h3>
-          <hr />
+        <Container className="Content">
+          <Container className="ContentHeader">
+            <Col>
+              <h2>Fotogaléria</h2>
+              <h3>Kategórie</h3>
+              <hr />
+            </Col>
+          </Container>
           <Switch>
             <CategoryGalery />
             <Route path="/architecture" component={DetailGalery} />
             <Route path="/" component={CategoryGalery} />
           </Switch>
-        </div>
+        </Container>
       </div>
     );
   }

@@ -7,6 +7,7 @@ $galery-item-color: #555555;
 $addcategory-item-color: #d0d0d0;
 $shadow-color: #eaeaea;
 $gradient-color: #00000045;
+$border-color-primary: #303030;
 $border-color: #aaaaaa;
 
 @import "mixins";
@@ -34,7 +35,7 @@ body {
   background-size: cover;
   background-position: center;
   max-width: 100%;
-  height: 25vh;
+  height: 30vh;
   @include imageblur;
 }
 
@@ -48,30 +49,44 @@ body {
   margin: 0;
 }
 
+.Content.container {
+  max-width: -webkit-fill-available;
+}
+
+.row {
+  margin-top: 20px;
+}
+
 .Content {
   display: block;
-  position: relative;
-  top: -160px;
+  position: absolute;
+  left: 0;
+  max-width: 100%;
+  padding: 0;
+  top: 100px;
   z-index: 9999;
-  margin-left: 10%;
-  margin-right: 10%;
+  // margin-left: 5%;
+  // margin-right: 5%;
 }
 
 .Content h2,
 h3 {
-  font-weight: 200;
+  display: block;
   text-align: left;
   text-transform: uppercase;
 }
 
 .Content h2 {
   color: $primary-font-color;
+  font-size: 110%;
+  font-weight: 200;
 }
 
 .Content h3 {
   color: $primary-font-color;
-  font-size: 100%;
-  margin: 20px 0 0 0;
+  font-size: 80%;
+  font-weight: 100;
+  margin: 10px 0 0 0;
 }
 
 .Content hr {
@@ -85,24 +100,19 @@ h3 {
   line-height: 0;
   clear: both;
   border: none;
-  border-top: 1px solid #ffffff;
+  opacity: 0.5;
+  border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
-}
-
-.row {
-  max-width: 100%;
-  margin-bottom: 50px;
 }
 
 .galeryitem {
   border-radius: 5px;
-  width: 220px;
-  height: 180px;
   margin: 0;
   text-transform: uppercase;
   overflow: hidden;
   background-color: $primary-background-color;
   box-shadow: 0 2px 5px $shadow-color;
+  @include size;
 }
 
 .galeryitem img {
@@ -134,19 +144,25 @@ h3 {
 }
 
 .addcategory {
+  cursor: pointer;
   border-radius: 5px;
-  width: 220px;
-  height: 180px;
   margin: 0;
+  display: block;
+  position: absolute;
   text-transform: uppercase;
   text-align: center;
   background-color: $primary-background-color;
   box-shadow: 0 2px 5px $shadow-color;
+  @include size;
 }
 
 .addcategory {
   p {
-    font-size: 80%;
+    font-size: 85%;
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 27%;
     color: $addcategory-item-color;
     transition: font-size 0.5s, color 0.5s;
   }
@@ -160,22 +176,19 @@ h3 {
     background: url("../assets/icons/addicon.svg");
     color: $addcategory-item-color;
     display: block;
-    position: relative;
-    margin-bottom: 10px;
-    left: 40%;
-    height: 30px;
-    width: 30px;
+    position: absolute;
+    top: 35%;
+    left: 42%;
+    height: 40px;
+    width: 40px;
     overflow: hidden;
     transition: left 0.5s, height 0.5s, width 0.5s, color 0.5s;
   }
   .addicon:hover {
     cursor: pointer;
     color: $galery-item-color;
-    height: 40px;
-    width: 40px;
-    left: 37%;
-  }
-  .container {
-    padding-top: 25%;
+    height: 50px;
+    width: 50px;
+    left: 40%;
   }
 }

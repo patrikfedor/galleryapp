@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Modal from "./UI/modal";
-import Aux from "../hoc/Aux";
 import AddPhoto from "../components/addPhoto";
 
 import architectureMain from "../assets/images/thumb/architecture-main.jpeg";
@@ -32,7 +31,7 @@ class DetailGalery extends Component {
     }
 
     return (
-      <Aux>
+      <React.Fragment>
         <div className="container">
           <div className="row">
             <div className="col-md-3">
@@ -83,7 +82,7 @@ class DetailGalery extends Component {
         >
           {addPhoto}
         </Modal>
-      </Aux>
+      </React.Fragment>
     );
   }
 }
